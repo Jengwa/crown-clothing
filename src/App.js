@@ -12,10 +12,10 @@ import SignInAndSignUp from './pages/signin-and-sign-up/SignInAndSignUp';
 
 import Header from './components/header/Header';
 
-import { auth, createUserProfileDocument } from './firebase/FirebaseUtils';
-import { setCurrentUser } from './redux/user/user.action';
-import { selectCurrentUser } from './redux/user/user.selector'
+import { auth, createUserProfileDocument} from './firebase/FirebaseUtils';
 
+import { setCurrentUser } from './redux/user/user.action';
+import { selectCurrentUser } from './redux/user/user.selector';
 
 
 class App extends Component {
@@ -41,7 +41,8 @@ class App extends Component {
         
       }
       else {
-        setCurrentUser(userAuth)
+        setCurrentUser(userAuth);
+       
       }
     })
   }
@@ -71,6 +72,7 @@ class App extends Component {
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser
+  
 })
 
 const dispatchMapToProps = dispatch => ({
