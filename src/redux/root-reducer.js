@@ -18,7 +18,8 @@ const rootReducer =  combineReducers({
     user: userReducer,
     cart: cartReducer,
     directory: directoryReducer,
-    shop: shopReducer
+    shop: shopReducer,
+    
 })
 
 
