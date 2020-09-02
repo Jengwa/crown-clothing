@@ -113,6 +113,6 @@ export function* userSagas() {
             call(onCheckUserSession),
             call(onSignOutStart),
             call(onSignUpStart),
-            call(signInAfterSignUp)
+            call(onSignUpSuccess)
         ])
 }

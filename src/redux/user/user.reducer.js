@@ -24,14 +24,6 @@ const userReducer = (state= INITIAL_STATE, action) => {
 				error: null
 			}
 
-		case userActionTypes.SIGN_UP_SUCCESS:
-			return {
-				...state,
-				displayName: action.payload,
-				email: action.payload,
-				password: action.payload,
-				confirmPassword: action.payload
-			}
 
 		case userActionTypes.SIGN_IN_FAILURE:
 		case userActionTypes.SIGN_OUT_FAILURE:
