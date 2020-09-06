@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import FormInput from '../form-input/FormInput';
 import './SignIn.scss';
@@ -8,56 +8,47 @@ import CustomButton from '../custom-button/CustomButton';
 import { googleSignInStart, emailSignInStart } from '../../redux/user/user.action';
 
 
-class SignIn extends Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			email: '',
-			password: ''
-		}
-	}
-
-	handleSubmit = async event => {
+const SignIn = ({googleSignInStart, emailSignInStart }) => {
+	const [ userCredentials, setCredentials] = useState({email: '',password: ''})
+	const {email,password} = userCredentials;
+	const handleSubmit = async event => {
 		
 		event.preventDefault();
-		const {email,password} = this.state;
-		const { emailSignInStart } = this.props;
+		
+		
 
 		emailSignInStart(email,password);
 
 	
 	}
 
-	handleChange = (event) => {
+	const handleChange = (event) => {
 		const { name,value } = event.target;
 
-		this.setState({ [name]: value})
+		setCredentials({...userCredentials, [name]: value})
 	}
 
-	render() {
-		const { googleSignInStart } = this.props;
 		return(
 			<div className='sign-in'>
 				<h2 className='title'>I already have account</h2>
 				<span>Sign in with your email and password</span>
-				<form onSubmit= {this.handleSubmit}>
+				<form onSubmit= {handleSubmit}>
 					<FormInput 
 						name='email' 
-						value={this.state.email} 
+						value={email} 
 						type='email' 
 						required 
-						handleChange={this.handleChange}
+						handleChange={handleChange}
 						label='email'
 					/>
 				
 					<FormInput 
 						name='password' 
-						value={this.state.password}
+						value={password}
 						type='password' 
 						label='password'
 						required 
-						handleChange={this.handleChange} 
+						handleChange={handleChange} 
 					/>
 					<div className='buttons'>
 						<CustomButton type='submit'>Sign In</CustomButton>
@@ -71,8 +62,6 @@ class SignIn extends Component {
 			</div>
 		)
 	}
-
-}
 
 const mapDispatchToProps = dispatch => ({
 	googleSignInStart: () => dispatch(googleSignInStart()),

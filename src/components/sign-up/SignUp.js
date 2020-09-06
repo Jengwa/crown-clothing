@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import { connect } from 'react-redux';
 
 import FormInput from '../form-input/FormInput';
@@ -7,22 +7,19 @@ import { signUpStart } from '../../redux/user/user.action';
 
 import './SignUp.scss'
 
-class SignUp extends Component {
-	constructor() {
-		super();
-
-		this.state = {
-			displayName: '',
+const SignUp = ({signUpStart}) => {
+	
+	const [userCredentials, setUserCredentials] = useState(
+		{ 
+			displayName:'',
 			email: '',
 			password: '',
 			confirmPassword: ''
-		}
+		})
 
-	}
-
-	handleSubmit = async event => {
-		const {signUpStart} = this.props;
-		const {displayName,email,password,confirmPassword} = this.state;
+const {displayName,email,password,confirmPassword} = userCredentials;
+	const handleSubmit = async event => {
+		
 		event.preventDefault()
 
 		if(password !== confirmPassword) {
@@ -32,24 +29,23 @@ class SignUp extends Component {
 		signUpStart({displayName,email,password})
 		
 	}
-	handleChange = (event) => {
+	const handleChange = (event) => {
 		const { name,value } = event.target;
 
-		this.setState({ [name]: value})
+		setUserCredentials({...userCredentials, [name]: value})
 	}
 
-	render() {
-		const {displayName,email,password,confirmPassword} = this.state;
+	
 		return(
 			
 			<div className= 'sign-up'>
 				<h2 className='title'>I do not have account</h2>
 				<span>Sign Up with email and password</span>
-				<form className='sign-up-form' onSubmit={this.handleSubmit}>
+				<form className='sign-up-form' onSubmit={handleSubmit}>
 					 <FormInput
 					 name='displayName' 
 					 type='text' 
-					 onChange={this.handleChange} 
+					 onChange={handleChange} 
 					 label='name' 
 					 value={displayName} 
 					 required
@@ -59,13 +55,13 @@ class SignUp extends Component {
 						value={email} 
 						type='email' 
 						required 
-						onChange={this.handleChange}
+						onChange={handleChange}
 						label='email'
 					/>
 				 <FormInput 
 				 	  name='password'
 						type='password' 
-						onChange={this.handleChange} 
+						onChange={handleChange} 
 						label='password' 
 						value={password} 
 						required
@@ -73,7 +69,7 @@ class SignUp extends Component {
 				 <FormInput
 				 	  name='confirmPassword'  
 				    type='password' 
-						onChange={this.handleChange} 
+						onChange={handleChange} 
 						label='confirm password' 
 						value={confirmPassword} 
 						required
@@ -87,7 +83,7 @@ class SignUp extends Component {
 			</div>
 		)
 	}
-}
+
 
 const mapDispatchToProps = dispatch => ({
 	signUpStart: (userCredentials) => dispatch(signUpStart(userCredentials))
