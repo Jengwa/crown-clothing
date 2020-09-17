@@ -29,7 +29,7 @@ const StripeCheckoutButton = ({ price }) => {
 				name= 'crown Clothing pvt Ltd.co'
 				billingAddress
 				shippingAddress
-				
+				image='https://svgshare.com/i/CUz.svg'
 				description={`Your total amount is $${ price }`}
 				amount= {priceForStripe}
 				panelLebel='Payment Infomation'
