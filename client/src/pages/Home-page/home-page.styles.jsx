@@ -5,4 +5,11 @@ export const HomeContainer = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 20px 80px;
+
+    
+
+`
+
+export const PageHeading = styled.h1`
+    
 `

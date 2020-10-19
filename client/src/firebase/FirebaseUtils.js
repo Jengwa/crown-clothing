@@ -1,4 +1,5 @@
 import firebase from 'firebase/app';
+
 import 'firebase/firestore';
 import 'firebase/auth';
 
@@ -13,7 +14,10 @@ const config = {
 	measurementId: "G-KJZ6288C15"
 }
 
+
 firebase.initializeApp(config);
+
+
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
@@ -84,6 +88,7 @@ export const getCurrentUser = () => {
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
+
 
 export const googleProvider = new firebase.auth.GoogleAuthProvider();
 googleProvider.setCustomParameters({ prompt: 'select_account' });
