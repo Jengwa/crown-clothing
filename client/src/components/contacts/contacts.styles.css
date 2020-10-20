@@ -50,7 +50,8 @@ textarea:focus {
     width: 50%;
     background-color: black; 
     color: white;
-    border: none;       
+    border: none;  
+         
 }
 
 .form > button:hover {

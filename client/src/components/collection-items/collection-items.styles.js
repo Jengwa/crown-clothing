@@ -3,32 +3,32 @@ import  CustomButton  from '../custom-button/CustomButton';
 
 
 export const CollectionContainer = styled.div`
-  width: 22vw;
-  display: flex;
-  flex-direction: column;
-  height: 350px;
-  align-items: center;
-  position: relative;
+width: 22vw;
+display: flex;
+flex-direction: column;
+height: 350px;
+align-items: center;
+position: relative;
+&:hover {
+  .image {
+    opacity: 0.8;
+  }
+  button {
+    opacity: 0.85;
+    display: flex;
+  }
+}
+@media screen and (max-width: 800px) {
+  width: 40vw;
   &:hover {
     .image {
-      opacity: 0.8;
+      opacity: unset;
     }
     button {
-      opacity: 0.85;
-      display: flex;
+      opacity: unset;
     }
   }
-  @media screen and (max-width: 800px) {
-    width: 40vw;
-    &:hover {
-      .image {
-        opacity: unset;
-      }
-      button {
-        opacity: unset;
-      }
-    }
-  }
+}
 `;
 
 
@@ -63,7 +63,6 @@ export const FooterContainer = styled.div`
     justify-content: space-between;
     font-size: 18px;
 
-   
 `
 
 export const NameContainer = styled.span`
