@@ -24,12 +24,12 @@ const ShopPage = ({fetchCollectionsStart, match}) => {
   
     return  (
       <div className='shop-page'>
-      <Route exact path={`${match.path}`} 
-       component={CollectionOverviewContainer}
-      />
-      <Route path={`${match.path}/:collectionId`}
-        component= {CollectionContainer}
-      />
+        <Route exact path={`${match.path}`} 
+        component={CollectionOverviewContainer}
+        />
+        <Route path={`${match.path}/:collectionId`}
+          component= {CollectionContainer}
+        />
       </div>
     );
   }

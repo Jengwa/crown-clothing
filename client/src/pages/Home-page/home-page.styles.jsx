@@ -10,6 +10,3 @@ export const HomeContainer = styled.div`
 
 `
 
-export const PageHeading = styled.h1`
-    
-`
