@@ -12,8 +12,8 @@ export const MenuItemContainer = styled.div`
 	justify-content: center;
 	border: 1px solid black;
   margin: 0 7.5px 10px;
- 
-	overflow: hidden;
+  overflow: hidden;
+   
 	&:hover {
 		cursor: pointer;
 		& .background-image {

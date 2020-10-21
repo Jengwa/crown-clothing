@@ -13,17 +13,17 @@ import { LogoContainer, OptionsContainer, HeaderContainer, OptionLink } from './
 
 
 const Header = ({ currentUser , hidden, signOutStart }) => {
-	const [route,setRoute] = useState('signin');
-  	const [isSignedIn,setIsSignedIn] = useState(false);
+	// const [route,setRoute] = useState('signin');
+  	// const [isSignedIn,setIsSignedIn] = useState(false);
 
-	const onRouteChange = (route) => {
-	 if (route === 'signin') {
-      setIsSignedIn(false)
-    } else if (route === 'home') {
-      setIsSignedIn(true)
-    }
-    this.setRoute(route);
-	}
+	// const onRouteChange = (route) => {
+	//  if (route === 'signin') {
+    //   	setIsSignedIn(false)
+    // } else if (route === '/') {
+    //   	setIsSignedIn(true)
+    // }
+    // 	setRoute(route);
+	// }
 
 
 	return (
