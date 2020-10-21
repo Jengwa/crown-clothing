@@ -7,7 +7,7 @@ import {addItem} from '../../redux/cart/cart.action'
 import 
 { 	 AddButton,
 	 CollectionContainer,
-	  EmageContainer, 
+	  ImageContainer, 
 	  FooterContainer, 
 	  NameContainer, 
 	  PriceContainer } 
@@ -18,7 +18,7 @@ const CollectionItems = ({ item , addItem}) => {
 	const { name,price,imageUrl } = item;
 	return (
 		<CollectionContainer className='collection-items'>
-			<EmageContainer
+			<ImageContainer
 				className='image'
 				style={{
 					backgroundImage: `url(${imageUrl})`

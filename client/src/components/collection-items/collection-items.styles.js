@@ -32,7 +32,7 @@ position: relative;
 `;
 
 
-export const EmageContainer = styled.div`
+export const ImageContainer = styled.div`
     width: 100%;
     height: 95%;
     background-size: cover;

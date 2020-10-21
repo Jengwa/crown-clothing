@@ -4,15 +4,12 @@ import Directory from '../../components/directory/Directory';
 
 const HomePage = () => {
 	return(
-		
 			
 			<HomeContainer>
 			<h1>CROWN CLOTHING</h1>
 				<Directory/>	
 			</HomeContainer>
-		
-		
-	
+
 	)
 }
 

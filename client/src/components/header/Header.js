@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import { connect } from 'react-redux';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import { createStructuredSelector } from 'reselect';
@@ -13,6 +13,19 @@ import { LogoContainer, OptionsContainer, HeaderContainer, OptionLink } from './
 
 
 const Header = ({ currentUser , hidden, signOutStart }) => {
+	const [route,setRoute] = useState('signin');
+  	const [isSignedIn,setIsSignedIn] = useState(false);
+
+	const onRouteChange = (route) => {
+	 if (route === 'signin') {
+      setIsSignedIn(false)
+    } else if (route === 'home') {
+      setIsSignedIn(true)
+    }
+    this.setRoute(route);
+	}
+
+
 	return (
 		<HeaderContainer>
 			<LogoContainer to='/' >

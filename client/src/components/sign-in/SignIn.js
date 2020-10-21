@@ -15,11 +15,7 @@ const SignIn = ({googleSignInStart, emailSignInStart }) => {
 		
 		event.preventDefault();
 		
-		
-
 		emailSignInStart(email,password);
-
-	
 	}
 
 	const handleChange = (event) => {
@@ -27,7 +23,6 @@ const SignIn = ({googleSignInStart, emailSignInStart }) => {
 
 		setCredentials({...userCredentials, [name]: value})
 	}
-
 		return(
 			<div className='sign-in'>
 				<h2 className='title'>I already have account</h2>

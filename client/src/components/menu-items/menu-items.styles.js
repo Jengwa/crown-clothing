@@ -3,7 +3,7 @@
 import styled from 'styled-components';
 
 export const MenuItemContainer = styled.div`
-	height: ${({ size }) => (size ? '380px' : '240px')};
+  height: ${({ size }) => (size ? '380px' : '240px')};
 	min-width: 30%;
 	overflow: hidden;
 	flex: 1 1 auto;
@@ -11,7 +11,8 @@ export const MenuItemContainer = styled.div`
 	align-items: center;
 	justify-content: center;
 	border: 1px solid black;
-	margin: 0 7.5px 15px;
+  margin: 0 7.5px 10px;
+ 
 	overflow: hidden;
 	&:hover {
 		cursor: pointer;
@@ -33,7 +34,6 @@ export const MenuItemContainer = styled.div`
     height: 200px;
     overflow: hidden;
     margin: 0 7.5px 15px;
-
     
   }
 `;
@@ -57,10 +57,9 @@ export const ContentContainer = styled.div`
   background-color: white;
   opacity: 0.7;
   position: absolute;
-  @media screen and (max-width: 800px) {
-
+  @media screen and (max-width: 700px) {
     overflow: hidden;
- 
+    width: 72px;
     
   }
 `;
