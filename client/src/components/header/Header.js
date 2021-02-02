@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import { createStructuredSelector } from 'reselect';
@@ -27,10 +27,13 @@ const Header = ({ currentUser , hidden, signOutStart }) => {
 
 
 	return (
+		
 		<HeaderContainer>
+		
 			<LogoContainer to='/' >
 				<Logo/>
-			</LogoContainer>	
+			</LogoContainer>
+
 			<OptionsContainer >
 				<OptionLink to='/shop' >
 					SHOP
@@ -45,11 +48,12 @@ const Header = ({ currentUser , hidden, signOutStart }) => {
 					<OptionLink to='/signin'> SIGN IN</OptionLink>
 					)
 				}
-				<CartIcon />
+					<CartIcon />
 			</OptionsContainer>
 			{ 
 				hidden ? null : <CartDropdown/>
 			}
+				
 		</HeaderContainer>
 	)
 }
